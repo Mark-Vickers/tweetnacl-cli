@@ -44,9 +44,13 @@ generates a public and secret key pair e.g.
 will generate tw files called `alice.public` and 'alice.secret`
 
 `tweetnacl-dumpkeys <name>`
-dumps out the public and secret key pairs. This is only useful to allow the file
-to be transported as a string. I still need to create a program to convert a 
-string back into a key file.
+dumps out the public and secret key pairs. This is only useful to allow the public
+key to be transported as a string.
+
+`tweetnacl-storekey <name> <textkey>`
+converts the textkey produced by `tweetnacl-dumpkeys` back into a binary file e.g.
+`tweetnacl-storekey alice cb81792f4c044fcd8bc3e7c6d4595db1e9bc117ca68c316b8930d2b397309624`
+converts the text string back into binary and stores it in `alice.public`
 
 `tweetnacl-encode <file> <sender> <receiver>`
 takes the file <file>.txt and using the sender secret key and the receivers

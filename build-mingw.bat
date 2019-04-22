@@ -1,5 +1,6 @@
 @PATH=%PATH%;C:\MinGW\bin
 
+mkdir bin
 del *.o
 del /q bin\*.*
 
