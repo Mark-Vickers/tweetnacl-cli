@@ -12,4 +12,10 @@ gcc -o bin/tweetnacl-keypair tweetnacl-keypair.o tweetnacl.o randombytes.o
 gcc -Wall -c src/tweetnacl-dumpkeys.c
 gcc -o bin/tweetnacl-dumpkeys tweetnacl-dumpkeys.o common.o
 
+gcc -Wall -c src/tweetnacl-encode.c
+gcc -o bin/tweetnacl-encode tweetnacl-encode.o common.o tweetnacl.o randombytes.o
+
+gcc -Wall -c src/tweetnacl-decode.c
+gcc -o bin/tweetnacl-decode tweetnacl-decode.o common.o tweetnacl.o randombytes.o
+
 rm *.o
