@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rm bin/*
+find bin/ -type f ! -name '.gitignore' -delete
 
 gcc -Wall -c src/tweetnacl.c
 gcc -Wall -c src/randombytes.c
