@@ -4,10 +4,8 @@
 #include "tweetnacl.h"
 #include "common.h"
 
-#define public_filename_MAXLENGTH 256
-#define secret_filename_MAXLENGTH 256
-#define public_filename_SAFELENGTH (public_filename_MAXLENGTH - 20)
-#define secret_filename_SAFELENGTH (secret_filename_MAXLENGTH - 20)
+#define filename_MAXLENGTH 256
+#define filename_SAFELENGTH (filename_MAXLENGTH - 20)
 
 int main(int argc, char *argv[])
 {
@@ -15,18 +13,18 @@ int main(int argc, char *argv[])
 	unsigned char sk[crypto_box_SECRETKEYBYTES];
 	FILE *fp;
 
-	char public_filename[public_filename_MAXLENGTH];
-	char secret_filename[secret_filename_MAXLENGTH];
+	char public_filename[filename_MAXLENGTH];
+	char secret_filename[filename_MAXLENGTH];
 
 	strcpy(public_filename, "key.public");
 	strcpy(secret_filename, "key.secret");
 
 	if (argc > 1)
 	{
-		strncpy(public_filename, argv[1], public_filename_SAFELENGTH);
+		strncpy(public_filename, argv[1], filename_SAFELENGTH);
 		strcat(public_filename, ".public");
 
-		strncpy(secret_filename, argv[1], secret_filename_SAFELENGTH);
+		strncpy(secret_filename, argv[1], filename_SAFELENGTH);
 		strcat(secret_filename, ".secret");
 	}
 
