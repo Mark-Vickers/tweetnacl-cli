@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
 	}
 
 	// decrypt the message
-    crypto_box_open(plaintext, crypttext, crypttext_len, nonce, pk, sk);
+	crypto_box_open(plaintext, crypttext, crypttext_len, nonce, pk, sk);
 
 	// store the plaintext in a file
 	fp = fopen(plaintext_filename, "wb");

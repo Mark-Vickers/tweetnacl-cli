@@ -115,7 +115,7 @@ int main(int argc, char *argv[])
 	}
 
 	// encrypt the message
-    crypto_box(crypttext, plaintext, crypttext_len, nonce, pk, sk);
+	crypto_box(crypttext, plaintext, crypttext_len, nonce, pk, sk);
 
 	// store the nonce+crypttext in a file
 	fp = fopen(crypttext_filename, "wb");
