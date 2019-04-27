@@ -38,28 +38,28 @@ allow the generation of keypairs and the encoding and decoding of files.
 
 Usage is as follows...
 
-`tweetnacl-keypair <name>`
+`tweetnacl-keypair <name>`  
 generates a public and secret key pair e.g.
-`tweetnacl-keypair alice`
-will generate tw files called `alice.public` and 'alice.secret`
+`tweetnacl-keypair alice`  
+will generate tw files called `alice.public` and `alice.secret`
 
-`tweetnacl-dumpkeys <name>`
+`tweetnacl-dumpkeys <name>`  
 dumps out the public and secret key pairs. This is only useful to allow the public
 key to be transported as a string.
 
-`tweetnacl-storekey <name> <textkey>`
+`tweetnacl-storekey <name> <textkey>`  
 converts the textkey produced by `tweetnacl-dumpkeys` back into a binary file e.g.
 `tweetnacl-storekey alice cb81792f4c044fcd8bc3e7c6d4595db1e9bc117ca68c316b8930d2b397309624`
 converts the text string back into binary and stores it in `alice.public`
 
-`tweetnacl-encode <file> <sender> <receiver>`
+`tweetnacl-encode <file> <sender> <receiver>`  
 takes the file <file>.txt and using the sender secret key and the receivers
 public key encrypts the contents and puts it in <file>.tnacl e.g.
 `tweetnacl-encode message alice bob`
 takes `message.txt` and using `alice.secret` and `bob.public` encrypts `message.txt`
 and puts the result in `message.tnacl`.
 
-`tweetnacl-decode <file> <sender> <receiver>`
+`tweetnacl-decode <file> <sender> <receiver>`  
 takes the file <file>.tnacl and using the senders public key and the receivers
 private key decrypts the contents and puts it in <file>.txt e.g.
 `tweetnacl-decode message bob alice`
