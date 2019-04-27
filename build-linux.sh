@@ -1,6 +1,5 @@
 #!/bin/sh
 
-mkdir -p bin
 rm bin/*
 
 gcc -Wall -c src/tweetnacl.c
