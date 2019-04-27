@@ -1,7 +1,7 @@
 @PATH=%PATH%;C:\MinGW\bin
 
 del *.o
-del /q bin\*.*
+del /q bin\*.exe
 
 gcc -Wall -c src/tweetnacl.c
 gcc -Wall -c src/randombytes.c
