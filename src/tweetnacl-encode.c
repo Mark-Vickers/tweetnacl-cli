@@ -62,7 +62,11 @@ int main(int argc, char *argv[])
 	if (plaintext) {
 		fread(plaintext+crypto_box_ZEROBYTES, sizeof(char), plaintext_len, fp);
 	} else {
+		#ifdef WIN32
+		printf("ERROR: failed to allocate %I64u bytes for plaintext!\n", plaintext_len);
+		#else
 		printf("ERROR: failed to allocate %lld bytes for plaintext!\n", plaintext_len);
+		#endif
 		return (EXIT_FAILURE);
 	}
 	fclose(fp);
@@ -102,7 +106,11 @@ int main(int argc, char *argv[])
 	crypttext_len = plaintext_len + crypto_box_ZEROBYTES;
 	crypttext = calloc(crypttext_len, sizeof(char));
 	if (!crypttext) {
+		#ifdef WIN32
+		printf("ERROR: failed to allocate %I64u bytes for crypttext!\n", crypttext_len);
+		#else
 		printf("ERROR: failed to allocate %lld bytes for crypttext!\n", crypttext_len);
+		#endif
 		return (EXIT_FAILURE);
 	}
 
