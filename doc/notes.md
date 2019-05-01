@@ -62,7 +62,7 @@ and puts the result in `message.tnacl`.
 `tweetnacl-decode <file> <sender> <receiver>`  
 takes the file `<file>.tnacl` and using the senders public key and the receivers
 private key decrypts the contents and puts it in `<file>.txt` e.g.
-`tweetnacl-decode message bob alice`
+`tweetnacl-decode message alice bob`
 takes `message.tnacl` and using `alice.public` and `bob.secret` decrypts `message.tnacl`
 and puts the result in `message.txt`
 
